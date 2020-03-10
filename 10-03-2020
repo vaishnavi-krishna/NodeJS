@@ -19,7 +19,7 @@ Software Analyst Trainee
 Aspire Systems
 Sipcot IT Park
 Chennai
-//************************Writing a File ***************************
+//************************Writing a File to another file using callback function***************************
 const fs = require('fs');
 let fileData=fs.readFileSync('input.txt');
 fs.writeFile('input1.txt',fileData.toString(),(err,data)=>{
@@ -44,3 +44,26 @@ Software Analyst Trainee
 Aspire Systems
 Sipcot IT Park
 Chennai
+
+//************************Writing a data to another file using callback function***************************
+const fs = require('fs');
+let fileData=fs.readFileSync('input.txt');
+fs.writeFile('input1.txt','I am written from input.txt to input1.txt',(err,data)=>{
+    if(err)
+    {
+        console.error("The Error is : "+err);
+    }
+    else
+    {
+       
+        console.log("File is written successfully");
+    }
+});
+
+output:- 
+aspire1158@aspire1158-OptiPlex-3010:~/Documents$ node fs1.js
+File is written successfully
+aspire1158@aspire1158-OptiPlex-3010:~/Documents$ cat input1.txt
+I am written from input.txt to input1.txt
+
+//*******************************************************End Of Day****************************************************
