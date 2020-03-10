@@ -1,1 +1,46 @@
+//*************************Reading a File*************************
+const fs = require('fs');
+fs.readFile('input.txt',(err,data)=>{
+    if(err)
+    {
+        console.error("The Error is : "+err);
+    }
+    else
+    {
+        console.log(data.toString());
+    }
+});
 
+output:-
+aspire1158@aspire1158-OptiPlex-3010:~/Documents$ node fs1.js
+Hi Vaishnavi,
+LAMP id - INT0445, 
+Software Analyst Trainee
+Aspire Systems
+Sipcot IT Park
+Chennai
+//************************Writing a File ***************************
+const fs = require('fs');
+let fileData=fs.readFileSync('input.txt');
+fs.writeFile('input1.txt',fileData.toString(),(err,data)=>{
+    if(err)
+    {
+        console.error("The Error is : "+err);
+    }
+    else
+    {
+       
+        console.log("File is written successfully");
+    }
+});
+
+output:- 
+aspire1158@aspire1158-OptiPlex-3010:~/Documents$ node fs1.js
+File is written successfully
+aspire1158@aspire1158-OptiPlex-3010:~/Documents$ cat input1.txt
+Hi Vaishnavi,
+LAMP id - INT0445, 
+Software Analyst Trainee
+Aspire Systems
+Sipcot IT Park
+Chennai
